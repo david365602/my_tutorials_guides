@@ -11,7 +11,24 @@ ex: hydra -V -L userList.txt -P passwordList.txt -t 16 192.168.2.10 ssh
 -V specifies verbose (shows username and password being attempted)
 -L user word list. use -l for username
 -P password list
--t Threads. upto 32
+-t Threads. upto 32 (try using less threads if it fails such as 4)
 
 
-How to prevent from such attack will be comming soon for firewalld and iptables
+To prevent brute force attacks on iptables use 
+better explaination comming soon
+
+Actual code
+sudo iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH
+
+-A will add the rule
+-i spcifies the interface
+
+
+
+$ sudo iptables -A INPUT -i eth0 -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 180 --hitcount 4 --rttl --name SSH -j DROP
+
+
+hitcount is the amount of times a user can attempt to login before they are blocked off for the "seconds"
+
+
+Firewalld instructions will be coming here soon as well
