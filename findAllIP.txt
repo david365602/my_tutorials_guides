@@ -1,4 +1,0 @@
-This command will resolve all possible IP addresses and hostnames
-using multiple techniques
-1) cd /usr/bin
-2) fierce -dns <some_host_name>
