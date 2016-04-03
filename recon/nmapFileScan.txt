@@ -1,0 +1,6 @@
+
+nmap scanning from text file
+
+nmap -iL fileName.txt
+
+iL stands for import list
